@@ -43,22 +43,22 @@ function generate(words = []) {
         }
     }
 
-    // find the next word using the last word's next word possibilities
-    const last = words[words.length - 1];
-    const entry = data.find(e => e.word === last); // find the entry for the last word
+    let last = words[words.length - 1];
 
-    if (!entry) {
-        // no entry for the last word (so no possibilities for next word)
-        return words;
-    }
+    do {
+        // find the next word using the last word's next word possibilities
+        const entry = data.find(e => e.word === last); // find the entry for the last word
 
-    // add the next random word
-    words.push(randomElementOf(entry.probabilities));
+        if (!entry) {
+            // no entry for the last word (so no possibilities for next word)
+            break;
+        }
 
-    // 90% of probability to continue generating words
-    if (Math.random() < 0.9) {
-        words = generate(words);
-    }
+        // add the next random word
+        const next = randomElementOf(entry.probabilities);
+        words.push(next);
+        last = next;
+    } while (Math.random() < 0.9); // 90% of probability to continue generating words
 
     return words;
 }
