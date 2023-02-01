@@ -16,11 +16,16 @@ function train(args, initializer = true) {
     const entries = data.filter(entry => entry.word === word);
 
     if (entries.length > 0) {
-        entries.forEach(entry => entry.probabilities.push(next));
+        entries.forEach(entry => {
+            entry.probabilities.push(next);
+            if (initializer) {
+                entry.initializer = true;
+            }
+        });
     } else {
         const entry = { word, probabilities: [ next ] };
         if (initializer) {
-            entry.initializer = initializer;
+            entry.initializer = true;
         }
         data.push(entry);
     }
