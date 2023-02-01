@@ -1,0 +1,8 @@
+# editor files
+/.idea/
+
+# node
+/node_modules/
+
+# secret
+/.env
