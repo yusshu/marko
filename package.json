@@ -1,5 +1,5 @@
 {
-  "name": "corebot",
+  "name": "marko",
   "version": "1.0.0",
   "description": "A Discord bot that says random things BASED on previous messages in the same channel it speaks on",
   "main": "src/index.js",
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yusshu/corebot.git"
+    "url": "git+https://github.com/yusshu/marko.git"
   },
   "author": "yusshu",
   "bugs": {
-    "url": "https://github.com/yusshu/corebot/issues"
+    "url": "https://github.com/yusshu/marko/issues"
   },
   "dependencies": {
     "discord.js": "^13.12.0",

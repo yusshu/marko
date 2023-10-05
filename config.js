@@ -1,9 +1,9 @@
 const signale = require('signale');
 require('dotenv').config();
 
-const token = process.env.CORE_BOT_TOKEN;
-const owner = process.env.CORE_BOT_OWNER;
-const channel = process.env.CORE_BOT_CHANNEL;
+const token = process.env.MARKO_TOKEN;
+const owner = process.env.MARKO_OWNER;
+const channel = process.env.MARKO_CHANNEL;
 
 if (!token || !owner || !channel) {
   signale.fatal(new Error(`You must add an .env file containing the bot token, owner and channel (See .env.example)`));
