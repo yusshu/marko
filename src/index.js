@@ -49,7 +49,10 @@ client.on('messageCreate', async message => {
     }
 
     if (status.talk) {
-        await message.channel.send(handler.generate().join(' '));
+        const answer = handler.generate().join(' ');
+        if (answer !== '') {
+            await message.channel.send(answer);
+        }
     }
 
     if (status.collect) {
