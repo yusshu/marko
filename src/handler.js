@@ -1,8 +1,7 @@
 //
 // Artificial Stupidity
 //
-const fs = require('fs');
-const { _End } = require('./markovchain');
+const fs= require('fs');
 const { serialize, deserialize } = require('./mkpersist');
 
 const chain = deserialize(require('../data/words.json'));
@@ -13,7 +12,7 @@ function train(args) {
     for (let i = 0; i < args.length; i++) {
         node = node.addNext(args[i]);
     }
-    node.addNext(_End);
+    node.addEnd();
 }
 
 function generate() {
